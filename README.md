@@ -1,6 +1,6 @@
 # Unit Conversion App
 
-When running your django server locally url for the unit conversion API is localhost:8000/unitconv
+When running your django server locally the url for the unit conversion API is localhost:8000/unitconv
 
 ## Basics
 - The unit conversions that this currently supports is, Ton, lb, kg, troy ounce, gram, ounce.
