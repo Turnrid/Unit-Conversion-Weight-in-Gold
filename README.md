@@ -16,4 +16,4 @@ When running your django server locally the url for the Worth Your Weight In Gol
 ## Basics
 - A webpage that pulls the current price of gold per Troy Ounce
 - User can input a value and adjust the unit to compute the price of gold for that value
-- When computed the date and time when it was computed with the price will apear and can be removed with a left click
+- When computed the date and time when it was computed with the price will appear and can be removed with a left click
