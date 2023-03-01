@@ -15,7 +15,7 @@ def convert(request):
         resp['error'] = "Usage: to=[valid unit type needed]"
     elif "value" not in request.GET:
         resp['error'] = "Usage: value=[non-negative float needed]"
-    elif not request.GET['value'].isdigit():
+    elif not request.GET['value'].isdigit() and not request.GET['value'].replace('.', '', 1).isdigit():
         resp['error'] = "Usage: value=[non-negative float needed]"
     else:
         f = request.GET['from']
