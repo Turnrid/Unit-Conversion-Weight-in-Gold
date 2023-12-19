@@ -64,17 +64,24 @@ document.body.appendChild(masterDiv)
 
 
 // fetch for price of gold
-let date = new Date();
+let currentDate = new Date();
+let lastMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, currentDate.getDate());
 
-let day = date.getDate();
-let month = date.getMonth() + 1;
-let year = date.getFullYear();
+function formatDate(date) {
+    let day = date.getDate().toString().padStart(2, '0');
+    let month = (date.getMonth() + 1).toString().padStart(2, '0'); // Months are 0-indexed
+    let year = date.getFullYear();
+    return `${year}-${month}-${day}`;
+}
 
-let currentDate = `${year}-${month}-${day}`;
-let lastMonth = `${year}-${month - 1}-${day}`
+let currentDateString = formatDate(currentDate);
+let lastMonthString = formatDate(lastMonth);
+
+console.log(currentDateString);
+console.log(lastMonthString);
 
 document.querySelector('#waiting').textContent = "Thinking about it...";
-fetch(`https://data.nasdaq.com/api/v3/datasets/LBMA/GOLD.json?&start_date=${lastMonth}&end_date=${currentDate}&api_key=dttPFDoxJexSHpTUxGYM`)
+fetch(`/gold/api/gold-price-proxy?start_date=${lastMonthString}&end_date=${currentDateString}`)
     .then(r => r.json())
     .then(json => {
         if (json.hasOwnProperty('error')) {
