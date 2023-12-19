@@ -1,4 +1,8 @@
-# Unit Conversion App
+# Getting Started
+- This is using django to host the api and the website so make sure you have that installed, `pip install django`
+- Once installed and in the `/conv` folder run, `python manage.py runserver` to get it started
+
+## Unit Conversion App
 
 When running your django server locally the url for the unit conversion API is localhost:8000/unitconv
 
